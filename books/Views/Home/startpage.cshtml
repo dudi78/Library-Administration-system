@@ -1,0 +1,93 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@{
+    Layout = null;
+    
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watch Store</title>
+    <!-- Add your CSS stylesheets here if needed -->
+  
+<style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        #backgroundVideo {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        #textContainer {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: PaleGoldenRod;
+            outline: none;
+            z-index: 1; /* Set a higher z-index to make the text appear above the video */
+        }
+
+            #textContainer h1 {
+                font-size: 120px;
+                text-transform: uppercase;
+                font-family: 'Gambetta', serif;
+                letter-spacing: -3px;
+                transition: 700ms ease;
+                font-variation-settings: "wght" 311;
+                margin-bottom: 0.8rem;
+                cursor: pointer; /* Add cursor pointer to indicate it's clickable */
+            }
+
+                #textContainer h1:hover {
+                    font-variation-settings: "wght" 582;
+                    letter-spacing: 1px;
+                }
+
+            #textContainer p {
+                font-size: 1.2em;
+                line-height: 150%;
+                color: MintCream;
+                letter-spacing: 0.5px;
+                margin: 0;
+            }
+
+        a {
+            color: grey; /* Set your desired color value */
+        }
+
+</style>
+
+</head>
+
+<body>
+  <video id="backgroundVideo" autoplay  loop muted>
+    <source src="~/img/book.mp4" type="video/mp4">
+   
+</video>
+    <!-- Sample Advertisement -->
+    <div id="textContainer">
+        <h1>  <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index"> Explore </a></h1>
+        <p style="color: palegoldenrod;">
+            A library is a repository of knowledge and information, providing access to a diverse collection of books and resources for education, research, and leisure.
+        </p>
+       
+    </div>
+
+</body>
+
+</html>

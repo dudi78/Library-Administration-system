@@ -1,0 +1,94 @@
+﻿@model books.Models.ClientBook
+
+@{
+    ViewData["Title"] = "Create";
+}
+<style>
+    /* Body styles */
+    body {
+        background-color: #f8f9fa; /* Light gray background color */
+        color: #343a40; /* Dark text color */
+    }
+
+    /* Header styles */
+    h1 {
+        color: #007bff; /* Primary color for headers */
+    }
+
+    /* Form styles */
+    .form-group {
+        margin-bottom: 15px; /* Add some space between form groups */
+    }
+
+    /* Dropdown styles */
+    select.form-control {
+        width: 100%; /* Make the dropdown fill its container */
+    }
+
+    /* Submit button styles */
+    input[type="submit"].btn-primary {
+        background-color: #007bff; /* Primary color for buttons */
+        color: #fff; /* White text color */
+    }
+
+    /* Navigation link styles */
+    a {
+        color: #007bff; /* Primary color for links */
+    }
+
+        a:hover {
+            color: #0056b3; /* Darker color on hover */
+        }
+
+    /* Table styles */
+    .table {
+        margin-top: 20px; /* Add some space above the table */
+    }
+
+    /* Responsive table styles */
+    .table-responsive {
+        overflow-x: auto; /* Enable horizontal scrolling on small screens */
+    }
+
+    /* Button styles for actions */
+    .btn-warning, .btn-info, .btn-danger {
+        margin-right: 5px; /* Add space between buttons */
+    }
+
+    /* Highlight row on hover */
+    .table-hover tbody tr:hover {
+        background-color: #f5f5f5; /* Light gray background on hover */
+    }
+
+</style>
+
+<h1>Create</h1>
+
+<h4>ClientBook</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ClientId" class="control-label">Client Name</label>
+                <select asp-for="ClientId" class ="form-control" asp-items="ViewBag.ClientId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="BookId" class="control-label">Book Name</label>
+                <select asp-for="BookId" class ="form-control" asp-items="ViewBag.BookId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
